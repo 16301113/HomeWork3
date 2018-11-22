@@ -21,19 +21,25 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:text="School of Software Engineering"
-            android:paddingTop="8dp"
-            android:textSize="10dp"/>
 
         <TextView
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="info@sse.bjtu.edu"
-            android:textSize="10dp"/>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/cousine"
+            android:paddingTop="8dp"
+            android:text="Sports Club"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/cousine"
+            android:text="Self-discipline frees me"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
