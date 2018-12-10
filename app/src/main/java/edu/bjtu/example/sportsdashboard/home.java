@@ -47,7 +47,7 @@ import edu.bjtu.example.sportsdashboard.UI.fragment.CoachsFragment;
 import edu.bjtu.example.sportsdashboard.UI.fragment.SchedulFragment;
 
 import cn.bmob.v3.BmobUser;
-import edu.bjtu.example.sportsdashboard.UI.fragment.VideoPlayFragment;
+//import edu.bjtu.example.sportsdashboard.UI.fragment.VideoPlayFragment;
 
 public class home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -151,13 +151,15 @@ public class home extends AppCompatActivity
             Intent intent = new Intent(home.this, MainActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_favorite) {
-            fragment = new FavoriteFragment();
-            position = 3;
-        } else if (id == R.id.nav_appointment) {
-//            fragment = new AppointmentFragment();
-            fragment = new VideoPlayFragment();
-            position = 4;
-        } else if (id == R.id.nav_share) {
+            Intent intent = new Intent(home.this,MapActivity.class);
+            startActivity(intent);
+        }
+//        else if (id == R.id.nav_appointment) {
+////            fragment = new AppointmentFragment();
+//            fragment = new VideoPlayFragment();
+//            position = 4;
+//        }
+        else if (id == R.id.nav_share) {
 //            Toast.makeText(home.this,"你点击了share",Toast.LENGTH_LONG).show();
 //            DrawerLayout drawer = findViewById(R.id.drawer_layout);
 //            drawer.closeDrawer(GravityCompat.START);
