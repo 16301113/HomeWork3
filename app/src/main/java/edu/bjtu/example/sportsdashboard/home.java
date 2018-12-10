@@ -47,6 +47,7 @@ import edu.bjtu.example.sportsdashboard.UI.fragment.CoachsFragment;
 import edu.bjtu.example.sportsdashboard.UI.fragment.SchedulFragment;
 
 import cn.bmob.v3.BmobUser;
+import edu.bjtu.example.sportsdashboard.UI.fragment.VideoPlayFragment;
 
 public class home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -123,7 +124,7 @@ public class home extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        //int id = item.getItemId();
+        int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
 //        if (id == R.id.action_settings) {
@@ -153,7 +154,8 @@ public class home extends AppCompatActivity
             fragment = new FavoriteFragment();
             position = 3;
         } else if (id == R.id.nav_appointment) {
-            fragment = new AppointmentFragment();
+//            fragment = new AppointmentFragment();
+            fragment = new VideoPlayFragment();
             position = 4;
         } else if (id == R.id.nav_share) {
 //            Toast.makeText(home.this,"你点击了share",Toast.LENGTH_LONG).show();

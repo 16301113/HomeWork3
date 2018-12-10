@@ -38,4 +38,6 @@
     <!-- This is for left navigation-->
     <string name="intro">School of Software Engineering</string>
     <string name="mail">info@edu.bjtu.cn</string>
+    <!--This is for video play-->
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 </resources>
