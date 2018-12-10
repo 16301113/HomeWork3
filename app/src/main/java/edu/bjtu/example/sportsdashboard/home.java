@@ -147,25 +147,28 @@ public class home extends AppCompatActivity
         } else if (id == R.id.nav_register) {
             Intent intent = new Intent(home.this, register.class);
             startActivity(intent);
+            return true;
         } else if (id == R.id.nav_login) {
             Intent intent = new Intent(home.this, MainActivity.class);
             startActivity(intent);
+            return true;
         } else if (id == R.id.nav_favorite) {
             Intent intent = new Intent(home.this,MapActivity.class);
             startActivity(intent);
+            return true;
         }
-//        else if (id == R.id.nav_appointment) {
-////            fragment = new AppointmentFragment();
+        else if (id == R.id.nav_appointment) {
+            fragment = new AppointmentFragment();
 //            fragment = new VideoPlayFragment();
-//            position = 4;
-//        }
+            position = 4;
+        }
         else if (id == R.id.nav_share) {
-//            Toast.makeText(home.this,"你点击了share",Toast.LENGTH_LONG).show();
+            Toast.makeText(home.this,"你点击了share",Toast.LENGTH_LONG).show();
 //            DrawerLayout drawer = findViewById(R.id.drawer_layout);
 //            drawer.closeDrawer(GravityCompat.START);
-//            return true;
-            fragment = new GridFragment();
-            position = 5;
+            return true;
+//            fragment = new GridFragment();
+//            position = 5;
         }
 //        else if (id == R.id.nav_send) {
 //            Toast.makeText(home.this,"你点击了send",Toast.LENGTH_LONG).show();
