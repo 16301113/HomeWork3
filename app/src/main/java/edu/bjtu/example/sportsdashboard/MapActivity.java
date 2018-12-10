@@ -175,19 +175,19 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-//            case R.id.bt:
-//                //把定位点再次显现出来
-//                MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLng(latLng);
-//                mBaiduMap.animateMapStatus(mapStatusUpdate);
-//                break;
-//            case R.id.button:
-//                //卫星地图
-//                mBaiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
-//                break;
-//            case R.id.buttons:
-//                //普通地图
-//                mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
-//                break;
+            case R.id.bt:
+                //把定位点再次显现出来
+                MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLng(latLng);
+                mBaiduMap.animateMapStatus(mapStatusUpdate);
+                break;
+            case R.id.button:
+                //卫星地图
+                mBaiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
+                break;
+            case R.id.buttons:
+                //普通地图
+                mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
+                break;
             case R.id.back:
                 //普通地图
                 Intent intent = new Intent(MapActivity.this, home.class);

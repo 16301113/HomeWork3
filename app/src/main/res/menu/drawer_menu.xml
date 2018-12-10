@@ -10,7 +10,7 @@
         <item
             android:id="@+id/nav_favorite"
             android:icon="@drawable/favorites_fill"
-            android:title="Favorite" />
+            android:title="Map" />
         <item
             android:id="@+id/nav_appointment"
             android:icon="@drawable/remind_fill"
