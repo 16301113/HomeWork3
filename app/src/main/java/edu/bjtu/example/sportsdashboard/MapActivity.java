@@ -1,7 +1,11 @@
 package edu.bjtu.example.sportsdashboard;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
@@ -20,6 +24,9 @@ import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapActivity extends AppCompatActivity implements View.OnClickListener {
     private MapView mMapView;
@@ -177,6 +184,26 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.bt:
                 //把定位点再次显现出来
+                List<String> permissionList=new ArrayList<>();
+                if (ContextCompat.checkSelfPermission(MapActivity.this, Manifest.
+                        permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
+                    permissionList.add(Manifest.permission.ACCESS_FINE_LOCATION);
+                }
+                if (ContextCompat.checkSelfPermission(MapActivity.this, Manifest.
+                        permission.READ_PHONE_STATE)!= PackageManager.PERMISSION_GRANTED){
+                    permissionList.add(Manifest.permission.READ_PHONE_STATE);
+                }
+                if (ContextCompat.checkSelfPermission(MapActivity.this, Manifest.
+                        permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+                    permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                }
+                if (!permissionList.isEmpty()){
+                    String[] permissions=permissionList.toArray(new String[permissionList.size()]);
+                    ActivityCompat.requestPermissions(MapActivity.this,permissions,1);
+                }else {
+                    initLocation();
+                    // requestLocation();
+                }
                 MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLng(latLng);
                 mBaiduMap.animateMapStatus(mapStatusUpdate);
                 break;
