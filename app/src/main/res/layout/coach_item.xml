@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="120dp">
+    android:layout_height="140dp">
 
 
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -28,8 +28,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
-            android:padding="10dp"
-            android:background="@color/colorWhite"
             android:text="name"
             android:textSize="20dp"/>
 
@@ -40,6 +38,27 @@
             android:layout_marginTop="15dp"
             android:layout_marginLeft="25dp"
             android:text="introduction"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/call"/>
+
+            <TextView
+                android:id="@+id/coach_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="phone_number"
+                android:layout_marginLeft="1dp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -54,16 +73,24 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/favorite"
             android:onClick="Favorite"/>
+        <ImageButton
+            android:id="@+id/call"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/call"
+            android:onClick="Call"/>
 
         <ImageButton
             android:id="@+id/GoodButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/good"
             android:onClick="Good"/>
 

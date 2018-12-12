@@ -1,6 +1,7 @@
 package edu.bjtu.example.sportsdashboard;
 
 import android.annotation.SuppressLint;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
@@ -47,6 +48,7 @@ import edu.bjtu.example.sportsdashboard.UI.fragment.CoachsFragment;
 import edu.bjtu.example.sportsdashboard.UI.fragment.SchedulFragment;
 
 import cn.bmob.v3.BmobUser;
+import edu.bjtu.example.sportsdashboard.UI.fragment.VideoPlayFragment;
 //import edu.bjtu.example.sportsdashboard.UI.fragment.VideoPlayFragment;
 
 public class home extends AppCompatActivity
@@ -158,8 +160,7 @@ public class home extends AppCompatActivity
             return true;
         }
         else if (id == R.id.nav_appointment) {
-            fragment = new AppointmentFragment();
-//            fragment = new VideoPlayFragment();
+            fragment = new VideoPlayFragment();
             position = 4;
         }
         else if (id == R.id.nav_share) {
@@ -359,7 +360,35 @@ public class home extends AppCompatActivity
         Toast.makeText(home.this, "你点击了点赞", Toast.LENGTH_LONG).show();
 
     }
+    public void Call(View view){
 
+//        Toast.makeText(home.this, "你点击了拨号", Toast.LENGTH_LONG).show();
+//        List<Map<String,Object>> list=new CoachsFragment().DataList();
+//        Intent intent=new Intent(Intent.ACTION_DIAL);
+//        Uri data;
+//        for(int i=0;i<6;i++) {
+//            Map<String,Object>map=list.get(i);
+//            String str=(String)map.get("coach_name");
+//            String phone=(String)map.get("coach_phone");
+//            if(str.equals("Jackson")){
+//                data=Uri.parse("tel:"+phone);
+//                break;
+//            }else if(str.equals("Leo")){
+//                data=Uri.parse("tel:"+phone);
+//                break;
+//            }else if(str.equals("Leo")){
+//                data=Uri.parse("tel:"+phone);
+//                break;
+//        }
+//        intent.setData(data);
+//        startActivity(intent);
+
+        Intent intent=new Intent(Intent.ACTION_DIAL);
+        Uri data=Uri.parse("tel:"+"17735676828");
+        intent.setData(data);
+        startActivity(intent);
+
+    }
     public void Back(View view) {
 //        long eventTime = SystemClock.uptimeMillis();
 //        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frame_content);

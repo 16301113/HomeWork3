@@ -1,6 +1,8 @@
 package edu.bjtu.example.sportsdashboard.UI.fragment;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -43,8 +45,8 @@ public class CoachsFragment extends Fragment {
         listView = view.findViewById(R.id.coach_list);
         //设置SimpleAdapter
         SimpleAdapter adapter=new SimpleAdapter(getActivity(),DataList(),R.layout.coach_item,
-                new String[]{"coach_photo","coach_name","coach_introduction"},
-                new int[]{R.id.coach_photo_image,R.id.coach_name_text,R.id.coach_introduction_text});
+                new String[]{"coach_photo","coach_name","coach_introduction","coach_phone"},
+                new int[]{R.id.coach_photo_image,R.id.coach_name_text,R.id.coach_introduction_text,R.id.coach_phone});
 
 
         listView.setAdapter(adapter);
@@ -54,43 +56,16 @@ public class CoachsFragment extends Fragment {
     //填充数据列表
     public List<Map<String,Object>> DataList(){
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-        Map<String, Object> map = new HashMap<String, Object>();
 
-        map.put("coach_photo",R.drawable.trainer1);
-        map.put("coach_name","ha");
-        map.put("coach_introduction","he");
-        list.add(map);
+        for (int i = 0;i < 10;i++){
+            Map<String, Object> map = new HashMap<String, Object>();
 
-        map = new HashMap<String, Object>();
-        map.put("coach_photo",R.drawable.trainer2);
-        map.put("coach_name","heihei");
-        map.put("coach_introduction","hengheng");
-        list.add(map);
-
-        map = new HashMap<String, Object>();
-        map.put("coach_photo",R.drawable.trainer3);
-        map.put("coach_name","heihei");
-        map.put("coach_introduction","hengheng");
-        list.add(map);
-
-        map = new HashMap<String, Object>();
-        map.put("coach_photo",R.drawable.trainer4);
-        map.put("coach_name","heihei");
-        map.put("coach_introduction","hengheng");
-        list.add(map);
-
-        map = new HashMap<String, Object>();
-        map.put("coach_photo",R.drawable.trainer5);
-        map.put("coach_name","heihei");
-        map.put("coach_introduction","hengheng");
-        list.add(map);
-
-        map = new HashMap<String, Object>();
-        map.put("coach_photo",R.drawable.trainer6);
-        map.put("coach_name","heihei");
-        map.put("coach_introduction","hengheng");
-        list.add(map);
-
+            map.put("coach_photo",R.drawable.trainer1);
+            map.put("coach_name","coach " + i);
+            map.put("coach_introduction","introduction " + i);
+            map.put("coach_phone","17735676828");
+            list.add(map);
+        }
         return list;
     }
 
@@ -104,7 +79,12 @@ public class CoachsFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"You select the item:"+position,Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                String phone = (String)DataList().get(position).get("coach_phone");
+                Uri data=Uri.parse("tel:"+phone);
+                intent.setData(data);
+                startActivity(intent);
 
             }
         });
